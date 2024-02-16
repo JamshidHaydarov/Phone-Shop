@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+{%load static%}
+<div class="card-body">
+    <h4>Phone List</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Body</th>
+                <th scope="col">Characteristics</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for phone in phones %}
+            <tr>
+                <td>{{ phone.title }}</td>
+                <td>{{ phone.description }}</td>
+                <td>{{ phone.body }}</td>
+                <td>{{ phone.characteristics }}</td>
+                <td> <img src="{% static 'imgs/phone.jpg'%}" alt="" class="brand-img"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
